@@ -221,3 +221,30 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ---------------------------------------------------------------------------
+# Project-specific (defect-detection)
+# ---------------------------------------------------------------------------
+# Datasets: never committed. Keep only the empty folder skeleton.
+data/**
+!data/**/
+!data/**/.gitkeep
+datasets/                # anomalib's default MVTec download location
+*.tar.xz
+
+# Raw anomalib output (checkpoints, hundreds of prediction images). The Engine
+# is pointed here via default_root_dir; results/ holds curated portfolio files only.
+runs/
+
+# Exported models. Ignored by folder rather than by extension, so unrelated
+# .xml/.bin files elsewhere stay visible.
+weights/
+exported/
+*.ckpt
+*.pt
+*.pth
+
+# Inspection log database (the app creates it at runtime)
+*.sqlite
+*.sqlite3
+*.db
