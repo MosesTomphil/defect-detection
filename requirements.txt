@@ -1,0 +1,19 @@
+# Pinned, tested together on Python 3.12 (2026-11-21).
+# Only direct dependencies are listed; pip resolves the rest.
+#
+# Local / Colab:   pip install -r requirements.txt
+# On Colab the default torch wheel already includes CUDA, so nothing extra is needed.
+# For a small CPU-only install (e.g. the Hugging Face Space), install torch from the CPU index first:
+#   pip install torch==2.15.0 torchvision==0.29.2 --index-url https://download.pytorch.org/whl/cpu
+
+anomalib[cpu]==2.7.1     # PatchCore, PaDiM, EfficientAD + MVTecAD / Folder datamodules
+torch==2.15.0
+torchvision==0.29.2
+lightning==2.6.6         # training loop used by anomalib's Engine
+timm==1.0.31             # pretrained backbones (wide_resnet50 etc.)
+numpy==2.5.5
+pillow==13.0.0
+scikit-learn==1.9.1      # ROC / threshold sweep in evaluate.py
+pandas==3.1.1            # results tables, batch CSV
+matplotlib==3.11.2       # charts, heatmap overlays
+gradio==6.32.0           # web app
